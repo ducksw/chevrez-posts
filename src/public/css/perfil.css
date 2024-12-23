@@ -1,0 +1,148 @@
+.box-perfil {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #222222;
+  background-color: #121417;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.box {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+
+.box-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 300px;
+  background-color: black;
+  border-radius: 10px;
+  border: 1px solid #222222;
+  height: 100%;
+  padding: 10px;
+}
+
+.aea {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.aea span {
+  width: 120px;
+}
+
+.private-perfil {
+  border: 1px solid #222222;
+  background-color: #121417;
+  border-radius: 10px;
+}
+
+.private-perfil {
+  padding: 5px;
+}
+
+.image-perfil {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border: 1px solid #222222;
+  max-height: 300px;
+  height: 100%;
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.image-perfil img {
+  max-width: 100%;
+  width: 40%;
+  height: 100px;
+  margin: auto;
+}
+
+.image-perfil2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #222222;
+  max-height: 300px;
+  height: 100%;
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.image-perfil2 img {
+  height: 100px;
+  margin: auto;
+}
+
+#gmail {
+  font-size: 12px;
+}
+
+.image-perfil2 {
+  display: none;
+}
+
+.form-btn {
+  display: flex;
+  justify-content: end;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.close-session {
+  background-color: red;
+  max-width: 100%;
+  width: 100px;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.close-session:hover {
+  background-color: brown;
+}
+
+@media (max-width: 800px) {
+  .image-perfil {
+    display: none;
+  }
+  
+  .image-perfil2 {
+    display: flex;
+  }
+
+  .info-box {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+    border: 1px solid #222222;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .box {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    margin: auto;
+  }
+}

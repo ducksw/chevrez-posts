@@ -1,0 +1,19 @@
+.list-team {
+  display: flex;
+  flex-direction: column;
+}
+
+.box-team {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box-team p {
+  font-size: 13px;
+}
+
+.box-team b {
+  color: lightblue;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chevrez</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../public/css/style.css">
+
+  <!--MODAL-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+</head>
+<body>
+<div class="main">
+  <div class="nav">
+    <div class="bar"></div>
+    <div class="info">
+        <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg">
+      <span>
+        {{#if userName }}
+          Hola otra vez,<br/>
+          <span class="name-perfil"><a href="/perfil/{{userName}}">{{userName}}</a></span>
+        {{else}}
+          Hola extrañ@
+        {{/if}}
+      </span>
+
+      <div class="info2">
+        {{#if userName }}
+          <span>Bienvenido a Chevrez</span>
+
+        {{else}}
+          <span>No tienes una cuenta</span>
+          <span>Registrate pues hijit@...</span>
+        {{/if}}
+        </div>
+        {{#if userName}}
+        {{else}}
+        <div class="register-btn"> 
+          <a href="/index/register">Registrate</a>
+          <a href="/index/login">Login</a>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+  <div class="centro">
+    <div class="title">
+      <a href="/index"><img src="../public/image/name.png"></a>
+      <div class="nav-centro">
+        <a href="/index">Home</a>
+        <a href="/index/team">Team info</a>
+        <a href="">Cool Stuff</a>
+      </div>
+    </div>
+    <div class="nav-bar">
+      <span>Chevrez Posts</span>
+      {{#if userName}}
+        <b><a href="/perfil/{{userName}}">My Perfil</a></b>
+        {{else}}
+        <div class="nav-mobile">
+          <a href="/index/register">Registrate</a> /
+          <a href="/index/login">Login</a>
+        </div>
+      {{/if}}
+    </div>
+    <div class="public">
+      {{#if adminName}}
+      <form class="box-post" method="POST" enctype="multipart/form-data">
+        <textarea class="area" type="text" name="parr" required placeholder="¿Que vas a Postear Mi King con cara de Kong?"></textarea>
+        <div class="view-image" id="view-image">
+          <img src="" id="img">
+        </div>
+        <hr>
+        <div class="prin">
+          <div class="barr">
+            <label for="file-upload" class="custom-file-upload">
+              <i class="fa-solid fa-image" id="image-icon"></i>
+            </label>
+            <input id="file-upload" type="file" onchange="mostrar()" name="image">
+          </div>
+          <button class="post-index" type="submit">↑ POST</button>
+        </div>
+      </form>
+      {{/if}}
+      {{#each posts }}
+        <a href="/posts/{{this._id}}" class="post" id="post">
+          <div class="public-perfil">
+            <div class="image-public">
+              <img src="http://gravatar.com/avatar/{{this.user_id.gravatar}}?d=monsterid&s=300">
+            </div>
+            <div class="info-public">
+              <div class="aea">
+                <span class="info-public-name">{{this.user_id.name}}🗿 </span>
+                <span class="info-public-name-arroba">@{{this.user_id.name}}</span>
+              </div>
+              <span class="date">Hace {{timeago this.timestamp}}</span>
+            </div>
+          </div>
+            <span class="parr" id="parr2">{{this.parr}}</span>
+            {{#if this.filename}}
+              <div class="box-image-bd" id="box-image-bd">
+                  <img class="image-bd" src="/public/upload/{{filename}}">
+              </div>
+            {{/if}}
+        </a>
+            <div class="box-interac">
+              <i class="fa-regular fa-heart"></i>
+              <a href="/posts/{{this._id}}"><i id="comment" class="fa-regular fa-comment"></i><span class="coment-length">{{this.comments.length}}</span></a>
+              <span id="compartir" onclick="copyLinkToClipboard(this)" data-link="http://localhost:3000/posts/{{this.id}}"><i class="fa-solid fa-share"></i></span>
+
+            </div>
+      {{/each}}
+
+      <div class="box-welcome">
+        <h1>Bienvenido a Chevrez</h1>
+        <hr/>
+        <p class="parr">¡Bienvenidos a nuestro nuevo sitio web! Aunque estamos muy emocionados de lanzar esta versión, aún estamos trabajando en mejorar y agregar nuevas funcionalidades. Estén atentos a futuras actualizaciones, ya que constantemente estaremos implementando mejoras para ofrecerles una experiencia más fluida y enriquecedora. Gracias por su paciencia y apoyo mientras seguimos optimizando nuestra plataforma.</p>
+
+        <b>SI, EL TEXTO ESTA GENERADO POR CHAT GTP.</b>
+
+        <div class="btn-box">
+          <a href="/index/register" class="btn-register">
+            <span class="tag">Registrarse</span>
+            <span>Todos se puden unir</span>
+          </a>
+          <a href="/index/login" class="btn-login">
+            <span class="tag">Login</span>
+            <span>Si ya tienes una cuenta, logeate</span>
+          </a>
+        </div>
+      </div>
+
+      <br/>
+      <div class="list-integrantes">
+        <span>» Ducks</span>
+        <span>» Borink</span>
+        <span>» TheCoop3r_</span>
+        <span>» EfraX</span>
+        <span>» RYUK16</span>
+        <span>» EL PADRINO</span>
+        <span>» RozUnit</span>
+        <span class="foundation">© Chevrez 2024</span>
+      </div>
+    </div>
+  </div>
+
+  <!--BOX-LEFT-->
+  <div class="box-left">
+    <div class="left-box">
+      <div class="count-content">
+        <span class="count">{{userCount}}</span>
+        <span class="total">TOTAL USERS</span>
+      </div>
+      <div class="count-content">
+        <span class="count">{{this.posts.length}}</span>
+        <span class="total">TOTAL POSTS</span>
+      </div>
+      <div class="anun">
+        <span>Anuncio <i class="fa-solid fa-bell" style="color: gold;"></i></span>
+        <hr/>
+        <span class="parr2">La mecánica de dar likes aun no funciona, solo puedes comentar y compartir.</span>
+      </div>
+
+      <div class="new-user">
+        <span style="border-bottom: 1px solid grey;">Nuevos Usuarios <i class="fa-solid fa-user" style="color: gold;"></i></span>
+        {{#each user_all}}
+          <a class="box-all" href="/perfil/{{this.name}}">
+            <span class="all-name">{{this.name}}</span>
+            <span class="all-time">{{this.time}}</span>
+          </a>
+          {{else}}
+            <span style="margin-top: 10px; text-align: center;">No hay usuarios</span>
+        {{/each}}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+const textarea = document.querySelector("textarea");
+textarea.addEventListener("keyup", e => {
+  textarea.style.height = "63px";
+  let scHeight = e.target.scrollHeight;
+  textarea.style.height = `${scHeight}px`;
+});
+
+function copyLinkToClipboard(url) {
+  var link = url.getAttribute("data-link");
+
+  var tempInput = document.createElement("input");
+  tempInput.value = link;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+
+  alert("Copiado al portapapeles, ahora puedes compartir el link");
+}
+
+function mostrar(){
+  var archivo = document.getElementById("file-upload").files[0];
+  var image = document.getElementById("view-image")
+  var reader = new FileReader();
+  if (reader) {
+    reader.readAsDataURL(archivo );
+    reader.onloadend = function () {
+      document.getElementById("img").src = reader.result;
+      image.style.display = "flex"
+    }
+  }
+}
+</script>
+</body>
+</html>

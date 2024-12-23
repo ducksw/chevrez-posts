@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chevrez</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../public/css/style.css">
+  <link rel="stylesheet" href="../public/css/registro.css">
+</head>
+<body>
+<div class="main">
+  <div class="nav">
+    <div class="bar"></div>
+    <div class="info">
+      <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg">
+      <span>
+        {{#if userName }}
+          Hola otra vez,<br/>
+          <span class="name-perfil"><a href="/perfil/{{userName}}">{{userName}}</a></span>
+          {{else}}
+          Hola extrañ@
+        {{/if}}
+      </span>
+      <div class="info2">
+        {{#if userName}}
+          <span>Bienvenido a Chevrez</span>
+        {{else}}
+          <span>No tienes una cuenta</span>
+          <span>Registrate pues hijit@...</span>
+        {{/if}}
+        </div>
+        {{#if userName}}
+        {{else}}
+      <div class="register-btn"> 
+          <a href="/index/register">Registrate</a>
+          <a href="/index/login">Login</a>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  <div class="centro">
+    <div class="title">
+      <a href="/index"><img src="../public/image/name.png"></a>
+      <div class="nav-centro">
+        <a href="/index">Home</a>
+        <a href="/index/team">Team info</a>
+        <a href="">Cool Stuff</a>
+      </div>
+    </div>
+      <div class="nav-bar">
+        <span>Login</span>
+        {{#if userName}}
+          <b><a href="/perfil/{{userName}}">My Perfil</a></b>
+        {{/if}}
+      </div>
+    <div class="box-box">
+      <form action="/index/login" method="post">
+        <center><h2>[ Login ]</h2></center>
+        <br/>
+        <div class="box-form">
+          <div>
+            <span>Nickname:</span>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div>
+            <span>Contraseña:</span>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <br/>
+          <div class="btn-form">
+            <button type="submit">Login</button>
+            <a href="/index/register">Register</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <span class="foundation">© Chevrez 2024</span>
+  </div>
+</div>
+</body>
+</html>

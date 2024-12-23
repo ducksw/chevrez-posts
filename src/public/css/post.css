@@ -1,0 +1,89 @@
+#ex1 {
+  display: none;
+  flex-direction: column;
+  max-width: 100%;
+  width: 600px;
+  background-color: #0c0c0c;
+  color: white;
+}
+
+#ex2 {
+  display: none;
+  margin: auto;
+  flex-direction: column;
+  max-width: 100%;
+  width: 200px;
+  background-color: #0c0c0c;
+  color: white;
+}
+
+.delete {
+  background-color: red;
+  color: white;
+  border: 1px solid grey;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.delete:hover {
+  background-color: darkred;
+}
+
+.ellip {
+  text-align: end;
+  float: right;
+}
+
+.tex-post {
+  margin-top: 10px;
+}
+
+.modal-comment {
+  background-color: black;
+  border: none;
+  outline: none;
+  color: white;
+  width: 77%;
+  padding: 10px;
+  font-size: 15px;
+  field-sizing: content;
+  font-family: "Noto Sans", sans-serif;
+  resize: none;
+  max-height: 320px;
+}
+
+.perfil-modal {
+  display: flex;
+}
+
+.perfil-modal img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #121417;
+}
+
+.respon_comment {
+  margin-top: 10px;
+  color: grey;
+} 
+
+.name-publi {
+  color: red;
+  font-weight: bold;
+}
+
+.btn-modal {
+  padding: 5px;
+  font-size: 14px;
+  width: auto;
+  box-sizing: border-box;
+  cursor: pointer;
+  /* background-color: brown; */
+  background-color: #d1052a;
+  border: none;
+  border-radius: 10px;
+}

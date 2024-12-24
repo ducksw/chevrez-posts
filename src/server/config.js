@@ -6,7 +6,7 @@ const express = require('express')
 const errorHandler = require('errorhandler')
 const session = require('express-session');
 const methodOverride = require('method-override');
-const MongoStore = require('connect-mongo');
+// const MongoStore = require('connect-mongo');
 
 
 const routes = require('../routes/route')
@@ -21,7 +21,7 @@ module.exports = app => {
     saveUninitialized: true,
     // cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 }
     // store: MongoStore.create({ mongoUrl: 'mongodb://localhost/testing' })
-    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI })
+    // store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI })
   }));
 
   app.use(methodOverride('_method'));

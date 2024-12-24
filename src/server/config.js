@@ -21,6 +21,7 @@ module.exports = app => {
     saveUninitialized: true,
     // cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 }
     // store: MongoStore.create({ mongoUrl: 'mongodb://localhost/testing' })
+    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI })
   }));
 
   app.use(methodOverride('_method'));

@@ -6,7 +6,7 @@ const express = require('express')
 const errorHandler = require('errorhandler')
 const session = require('express-session');
 const methodOverride = require('method-override');
-// const MongoStore = require('connect-mongo');
+const MongoStore = require('connect-mongo');
 
 
 const routes = require('../routes/route')

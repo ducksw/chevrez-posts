@@ -5,5 +5,5 @@ mongoose.connect(database.URI, {
   // useNewUrlParser: true,
   // useUnifiedTopology: true
 })
-  .then(db => console.log("BD On"))
+  .then(db => console.log("BD On", db))
   .catch(err => console.error(err))

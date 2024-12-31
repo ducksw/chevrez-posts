@@ -101,14 +101,14 @@
             <span class="parr" id="parr2">{{this.parr}}</span>
             {{#if this.filename}}
               <div class="box-image-bd" id="box-image-bd">
-                  <img class="image-bd" src="/public/upload/{{filename}}">
+                  <img class="image-bd" src="../public/upload/{{filename}}">
               </div>
             {{/if}}
         </a>
             <div class="box-interac">
               <i class="fa-regular fa-heart"></i>
               <a href="/posts/{{this._id}}"><i id="comment" class="fa-regular fa-comment"></i><span class="coment-length">{{this.comments.length}}</span></a>
-              <span id="compartir" onclick="copyLinkToClipboard(this)" data-link="http://localhost:3000/posts/{{this.id}}"><i class="fa-solid fa-share"></i></span>
+              <span id="compartir" onclick="copyLinkToClipboard(this)" data-link="http://chevrez-posts.onrender.com/posts/{{this.id}}"><i class="fa-solid fa-share"></i></span>
 
             </div>
       {{/each}}

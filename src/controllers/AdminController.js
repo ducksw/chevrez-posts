@@ -37,8 +37,8 @@ ad.views = async(req, res) => {
 
     res.render('team', { admins })
   } catch (error) {
-      console.error(error)
-      res.status(500).send('FAIL')
+    console.error(error)
+    res.status(500).send('FAIL')
   }
 }
 

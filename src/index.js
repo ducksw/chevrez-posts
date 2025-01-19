@@ -4,8 +4,6 @@ const config = require('./server/config');
 const port = process.env.PORT || 3000;
 const connectDB = require("./database");
 
-//require('./database');
-
 connectDB()
 
 const hbs = require('hbs');
